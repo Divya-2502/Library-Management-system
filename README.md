@@ -1,431 +1,555 @@
-# 📚 Library Management System
+📚 Library Management System – Frontend
 
-A role-based Library Management System built using React to manage library books, users, and borrowing activities through a clean, responsive, and user-friendly interface.
+📌 Project Overview
 
-## 📌 Project Overview
+This is a React-based Library Management System frontend.
 
-The Library Management System is designed to simplify library operations by organizing books, managing users, and tracking book borrowing and returns.
+The project focuses on building a real-world frontend application with role-based functionality, authentication, routing, state management, reusable components, and API integration.
 
-The application supports four user roles: **Admin, Librarian, Staff, and Member**. Each role has specific permissions to ensure that users can access only the features relevant to them.
+The application supports different user roles and provides different functionalities based on user permissions.
 
-This project is being developed step by step to practice React concepts and build a practical frontend portfolio project.
+🛠️ Technology Stack
 
-## 🎯 Project Objectives
+React
 
-- Build a responsive and user-friendly web application.
-- Practice React fundamentals through a real-world project.
-- Implement role-based dashboards and permissions.
-- Manage books and user information.
-- Implement book issue and return workflows.
-- Apply JavaScript array methods and business logic.
-- Practice React Router, forms, validation, and state management.
-- Maintain the project using Git and GitHub.
-- Prepare for frontend developer interviews.
+JavaScript
 
-## 🛠️ Tech Stack
+Vite
 
-| Technology        | Purpose                                  |
-| ----------------- | ---------------------------------------- |
-| HTML5             | Application structure                    |
-| CSS3              | Styling                                  |
-| JavaScript (ES6+) | Application logic                        |
-| React             | Component-based UI development           |
-| Vite              | Development server and build tool        |
-| Bootstrap         | Responsive layouts and UI styling        |
-| Sass              | Organized and reusable styles            |
-| React Router      | Navigation and routing                   |
-| Git               | Version control                          |
-| GitHub            | Source code hosting and project tracking |
+React Router
 
-Additional technologies, such as REST APIs and backend authentication, may be integrated in future stages.
+Context API
 
-## 👥 User Roles and Permissions
+HTML
 
-The application supports four roles with different access permissions.
+CSS
 
-### 1. Admin
+Bootstrap
 
-- Add new books.
-- Edit existing book details.
-- View Librarian details.
-- View Staff details.
-- View Member details.
-- Access administrative information.
+REST API Integration
 
-### 2. Librarian
+Git & GitHub
 
-- Add new books.
-- Edit existing book details.
-- View Staff details.
-- View Member details.
-- Manage the book catalog.
+👥 User Roles
 
-### 3. Staff
+The application supports the following roles:
 
-- View available books.
-- Borrow a maximum of **10 books at a time**.
-- View their own borrowed books.
-- View their own borrowing history.
+Admin
 
-### 4. Member
+Librarian
 
-- View available books.
-- Borrow a maximum of **3 books at a time**.
-- View their own borrowed books.
-- View their own borrowing history.
+Member
 
-### Role Permission Matrix
+Faculty
 
-| Feature                    | Admin         | Librarian     | Staff       | Member      |
-| -------------------------- | ------------- | ------------- | ----------- | ----------- |
-| Add books                  | ✅             | ✅             | ❌           | ❌           |
-| Edit books                 | ✅             | ✅             | ❌           | ❌           |
-| View Librarian details     | ✅             | ❌             | ❌           | ❌           |
-| View Staff details         | ✅             | ✅             | Own profile | ❌           |
-| View Member details        | ✅             | ✅             | ❌           | Own profile |
-| Browse books               | ✅             | ✅             | ✅           | ✅           |
-| Borrow books               | To be defined | To be defined | Up to 10    | Up to 3     |
-| View own borrowing history | To be defined | To be defined | ✅           | ✅           |
+The available pages, navigation, and actions are displayed based on the authenticated user's role and permissions.
 
-**Note:** Borrowing limits for Admin and Librarian will be decided separately. The permission matrix will be enforced through application logic and, when a backend is integrated, server-side authorization.
+🔐 Phase 1 – Authentication
 
-## 🗺️ Development Roadmap
+Implement the authentication flow for users.
 
-The project will be developed in eight phases. Each phase focuses on specific functionality and React concepts.
+Frontend Logic
 
-### Phase 1: Login
+Handle authentication state
 
-**Features**
+Manage form state
 
-- Create a login page with a clean UI.
-- Add username and password fields.
-- Implement controlled inputs.
-- Validate form fields.
-- Handle form submission.
-- Prepare the login flow for the four user roles.
+Validate user input
 
-**React concepts**
+Handle authentication success and failure
 
-- `useState`
-- Controlled inputs
-- Forms and event handling
-- Conditional rendering
-- Form validation
+Store authenticated user information
 
-**Progress**
+Redirect users after successful authentication
 
-- [ ] Design the login page.
-- [ ] Create reusable form components where appropriate.
-- [ ] Implement input handling.
-- [ ] Add validation messages.
-- [ ] Test the login form.
+Implement logout functionality
 
-### Phase 2: Routing and Layout
+React Concepts
 
-**Features**
+useState
 
-- Configure application routes.
-- Create a common Navbar and Sidebar.
-- Build reusable page layouts.
-- Prepare separate navigation for each role.
+Controlled Components
 
-**React concepts**
+Form Handling
 
-- React Router
-- Components and props
-- Nested routes
-- `Outlet`
-- Layout components
+Validation
 
-**Progress**
+Conditional Rendering
 
-- [ ] Install and configure React Router.
-- [ ] Create the Navbar.
-- [ ] Create the Sidebar.
-- [ ] Create the common layout.
-- [ ] Configure routes for the application.
-- [ ] Prepare role-specific navigation.
+🧭 Phase 2 – Routing
 
-### Phase 3: Dashboard
+Use React Router to manage application navigation.
 
-**Features**
+Application Routes
 
-- Create dashboards for Admin, Librarian, Staff, and Member.
-- Display relevant statistics.
-- Show book and borrowing summaries.
-- Provide navigation to permitted features.
+/login
 
-**React concepts**
+/dashboard
 
-- Components
-- Props
-- `map()`
-- Reusable cards
-- Conditional rendering
+/books
+/books/:id
 
-**Progress**
+/book-copies
 
-- [ ] Design the dashboard layout.
-- [ ] Create reusable summary cards.
-- [ ] Display dashboard statistics.
-- [ ] Implement role-specific dashboard content.
-- [ ] Test dashboard navigation.
+/users
+/users/:id
 
-### Phase 4: Book Management
+/borrowings
+/borrowings/active
+/borrowings/overdue
 
-**Features**
+/wallet
 
-- Display the book catalog.
-- Show book titles, authors, categories, and availability.
-- Add new books.
-- Edit existing book details.
-- Delete books where permitted.
-- Display book details.
+/profile
+/my-borrowings
 
-**React concepts**
+React Concepts
 
-- CRUD operations
-- Arrays and objects
-- `map()`
-- `filter()`
-- `find()`
-- State updates and immutability
+BrowserRouter
 
-**Progress**
+Routes
 
-- [ ] Create the book listing page.
-- [ ] Display book information.
-- [ ] Implement the Add Book form.
-- [ ] Implement Edit Book functionality.
-- [ ] Implement Delete Book functionality.
-- [ ] Restrict book management actions to Admin and Librarian.
-- [ ] Test book management operations.
+Route
 
-### Phase 5: Members and Users
+Navigate
 
-**Features**
+Nested Routes
 
-- Manage member records.
-- Display relevant user details.
-- Create and edit user forms where permitted.
-- Display role-specific profile information.
-- Restrict access to user details according to permissions.
+Dynamic Routes
 
-**React concepts**
+🔒 Phase 3 – Protected Routes
 
-- Forms
-- Controlled inputs
-- State management
-- Conditional rendering
-- JavaScript objects and arrays
+Implement protected routes to restrict access to authenticated users.
 
-**Progress**
+Frontend Logic
 
-- [ ] Create the user listing page.
-- [ ] Create the user details view.
-- [ ] Display relevant Staff and Member information.
-- [ ] Implement permitted user management actions.
-- [ ] Apply role-based access rules.
-- [ ] Test user permissions.
-
-### Phase 6: Issue and Return Books
-
-**Features**
-
-- Issue books to eligible users.
-- Record borrowing and return information.
-- Track borrowed books.
-- Display due dates and return status.
-- Enforce Staff and Member borrowing limits.
-- Prevent borrowing unavailable books.
-
-**Borrowing rules**
-
-- Staff: Maximum 10 books at a time.
-- Member: Maximum 3 books at a time.
-
-**React concepts**
-
-- Business logic
-- Combining related data
-- Updating arrays and objects
-- State management
-- Validation
-- Conditional rendering
-
-**Progress**
-
-- [ ] Create the Issue Book interface.
-- [ ] Create the Return Book interface.
-- [ ] Track issued books.
-- [ ] Update book availability after issue and return.
-- [ ] Enforce borrowing limits.
-- [ ] Prevent issuing unavailable books.
-- [ ] Test issue and return scenarios.
-
-### Phase 7: Search, Filters, and Reports
-
-**Features**
-
-- Search books by title or author.
-- Filter books by category and availability.
-- Sort book lists.
-- View borrowing records.
-- Display relevant reports and summaries.
-
-**React concepts**
-
-- `filter()`
-- `find()`
-- `sort()`
-- Derived data
-- Search state
-- Conditional rendering
-
-**Progress**
-
-- [ ] Implement book search.
-- [ ] Add category filters.
-- [ ] Add availability filters.
-- [ ] Implement sorting.
-- [ ] Create borrowing summaries.
-- [ ] Test search and filtering.
-
-### Phase 8: Polish and Finalization
-
-**Features**
+User accesses a page
+        ↓
+Check authentication status
+        ↓
+Authenticated?
+   ↓ Yes          ↓ No
+Allow Access     Redirect to Login
 
-- Improve responsive design.
-- Add loading states.
-- Add error messages and empty states.
-- Improve accessibility.
-- Handle invalid user actions.
-- Review application performance.
-
-**React concepts**
-
-- Conditional rendering
-- Error and loading state management
-- Reusable UI components
-- Responsive design
-- Component optimization
-
-**Progress**
-
-- [ ] Test mobile, tablet, and desktop layouts.
-- [ ] Add loading indicators where needed.
-- [ ] Add empty-state messages.
-- [ ] Add appropriate error handling.
-- [ ] Review accessibility.
-- [ ] Test the main user workflows.
-- [ ] Update project documentation.
-
-## 📂 Planned Project Structure
+Protected routes should manage:
 
-```text
-library-management-system/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── common/
-│   │   ├── layout/
-│   │   └── books/
-│   ├── pages/
-│   │   ├── Login/
-│   │   ├── Dashboard/
-│   │   ├── Books/
-│   │   ├── Members/
-│   │   └── IssueReturn/
-│   ├── routes/
-│   ├── context/
-│   ├── hooks/
-│   ├── services/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-├── package-lock.json
-└── README.md
-```
+Authentication checks
 
-The folder structure may evolve as the project grows.
+Redirection
 
-## 🚀 Getting Started
+Unauthorized access
 
-### Prerequisites
+Role-based access
 
-- Node.js
-- npm
-- Git
-- Visual Studio Code or another code editor
+👥 Phase 4 – Role-Based Functionality
 
-### Installation
+Implement role-based rendering and access control in the frontend.
 
-1. Clone the repository:
+Admin
 
-   ```bash
-   git clone YOUR_GITHUB_REPOSITORY_URL
-   ```
+Manage library-related operations and users.
 
-2. Navigate to the project directory:
+Librarian
 
-   ```bash
-   cd library-management-system
-   ```
+Manage books, book copies, borrowing, returns, and related operations.
 
-3. Install dependencies:
+Member
 
-   ```bash
-   npm install
-   ```
+Access available library features based on member permissions.
 
-4. Start the development server:
+Faculty
 
-   ```bash
-   npm run dev
-   ```
+Access available library features based on faculty permissions.
 
-5. Open the local URL displayed in the terminal.
+Frontend Logic
 
-## 🧪 Testing and Validation
+Authenticated User
+        ↓
+Get User Role
+        ↓
+Check Permissions
+        ↓
+Render Allowed Pages and Actions
 
-Each phase will be tested before being marked complete.
+📊 Phase 5 – Dashboard
 
-Testing will cover:
+Create the main dashboard for the application.
 
-- Form validation.
-- Role-based feature visibility and permissions.
-- Book creation and editing.
-- Borrowing limit enforcement.
-- Book issue and return workflows.
-- Search, filters, and sorting.
-- Responsive layouts.
-- Error and empty states.
+Frontend Logic
 
-## 🔮 Future Enhancements
+Display relevant application information
 
-- REST API integration.
-- Backend authentication and authorization.
-- Database integration for persistent records.
-- Secure role-based access control.
-- Borrowing history and reporting.
-- Automated testing.
-- Deployment to a hosting platform.
+Manage application state
 
-## 📈 Project Status
+Handle loading states
 
-**Current status:** Planning and setup.
+Handle error states
 
-Development will begin with Phase 1: Login and proceed through the eight phases.
+Handle empty data states
 
-Progress checkboxes will be updated as features are implemented and tested.
+React Concepts
 
-## 👩‍💻 Purpose
+useState
 
-This project is being developed as a practical learning and portfolio project to strengthen React, JavaScript, UI development, and frontend interview skills.
+useEffect
 
-## 📄 License
+Conditional Rendering
 
-This project is intended for learning and portfolio development.
+Component Reusability
+
+📚 Phase 6 – Book Management
+
+Implement book-related functionality.
+
+Features
+
+Display book information
+
+Search functionality
+
+Filter functionality
+
+Add book functionality
+
+Update book functionality
+
+Delete book functionality
+
+View book details
+
+Frontend Logic
+
+Manage book state
+
+Handle user interactions
+
+Update UI after operations
+
+Handle loading and error states
+
+Reuse components where appropriate
+
+🔍 Phase 7 – Search and Filtering
+
+Implement search and filtering functionality.
+
+Frontend Logic
+
+Manage search state
+
+Filter displayed data
+
+Update results dynamically
+
+Handle empty results
+
+Optional Practice
+
+Debouncing
+
+Custom Hooks
+
+Optimizing unnecessary renders
+
+📖 Phase 8 – Book Copies
+
+Implement functionality for managing physical book copies.
+
+Frontend Logic
+
+Display copy information
+
+Manage availability status
+
+Add and update copies
+
+Remove copies
+
+Update the UI based on changes
+
+🔄 Phase 9 – Borrowing Management
+
+Implement the borrowing workflow.
+
+Frontend Logic
+
+Select User
+      ↓
+Get Required Information
+      ↓
+Validate Borrowing Rules
+      ↓
+Select Book
+      ↓
+Process Borrowing
+      ↓
+Update Application State
+      ↓
+Update UI
+
+The frontend should provide appropriate validation and feedback based on the application's business rules.
+
+🔙 Phase 10 – Return Management
+
+Implement the book return workflow.
+
+Frontend Logic
+
+Select Borrowing Record
+        ↓
+Get Required Information
+        ↓
+Process Return
+        ↓
+Update Application State
+        ↓
+Update Book Availability
+        ↓
+Update UI
+
+The application should handle the return status and display relevant information to the user.
+
+💰 Phase 11 – Wallet Management
+
+Implement wallet-related functionality.
+
+Frontend Logic
+
+Display wallet information
+
+Manage wallet-related operations
+
+Validate user actions
+
+Update application state
+
+Display operation status
+
+Handle success and error states
+
+👤 Phase 12 – User Management
+
+Implement user management functionality.
+
+Frontend Logic
+
+Display user information
+
+Search and filter users
+
+View user details
+
+Manage user information
+
+Handle user-related operations
+
+Update UI after changes
+
+🙋 Phase 13 – Profile and Borrowing History
+
+Implement functionality for authenticated users to access their own information.
+
+Features
+
+Profile information
+
+User-related information
+
+Borrowing information
+
+Borrowing history
+
+Frontend Logic
+
+Manage authenticated user data
+
+Display relevant information
+
+Handle loading and error states
+
+🧠 State Management
+
+Local State
+
+Use local component state for functionality specific to individual components.
+
+Examples include:
+
+Form state
+
+Search state
+
+UI state
+
+Loading state
+
+Error state
+
+Selected data
+
+Global State
+
+Use Context API for application-wide state.
+
+Suggested Global State
+
+AuthContext
+     │
+     ├── Authentication State
+     ├── User Information
+     ├── User Role
+     ├── Login
+     └── Logout
+
+🧩 Reusable Components
+
+Create reusable components to avoid repeated code and improve maintainability.
+
+Examples may include:
+
+Common UI components
+
+Layout components
+
+Form-related components
+
+Feedback components
+
+Shared functionality
+
+The exact UI design and components can be implemented based on the project requirements.
+
+🗂️ Suggested Folder Structure
+
+src/
+│
+├── assets/
+│
+├── components/
+│   ├── common/
+│   ├── layout/
+│   └── features/
+│
+├── context/
+│
+├── hooks/
+│
+├── pages/
+│   ├── auth/
+│   ├── dashboard/
+│   ├── books/
+│   ├── users/
+│   ├── borrowings/
+│   ├── wallet/
+│   └── profile/
+│
+├── routes/
+│
+├── services/
+│
+├── utils/
+│
+├── App.jsx
+└── main.jsx
+
+⚛️ React Concepts Practiced
+
+This project provides practice with:
+
+Components
+
+JSX
+
+Props
+
+State
+
+useState
+
+useEffect
+
+useContext
+
+Context API
+
+useRef
+
+Controlled Components
+
+Conditional Rendering
+
+Lists and Keys
+
+React Router
+
+Protected Routes
+
+Dynamic Routes
+
+Role-Based Rendering
+
+Custom Hooks
+
+Form Handling
+
+Validation
+
+State Management
+
+Loading States
+
+Error Handling
+
+API Integration
+
+🚀 Future Improvements
+
+After completing the core application, additional improvements may include:
+
+TypeScript
+
+Redux Toolkit
+
+Advanced State Management
+
+Custom Hooks
+
+Lazy Loading
+
+Code Splitting
+
+Performance Optimization
+
+Unit Testing
+
+CI/CD
+
+🎯 Project Goal
+
+The goal of this project is to build a practical frontend application and demonstrate:
+
+Strong JavaScript fundamentals
+
+React concepts
+
+State management
+
+React Router
+
+Protected routes
+
+Role-based functionality
+
+Form handling
+
+Validation
+
+Reusable components
+
+Real-world frontend workflows
+
+Clean project architecture
+
+API integration
+
+Responsive design
