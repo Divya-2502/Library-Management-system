@@ -1,87 +1,97 @@
-📚 Library Management System – Frontend
+# 📚 Library Management System
 
-📌 Project Overview
+### ⚛️ React Frontend Application
 
-This is a React-based Library Management System frontend.
+> A real-world React application focused on authentication, role-based functionality, routing, state management, reusable components, and frontend workflows.
 
-The project focuses on building a real-world frontend application with role-based functionality, authentication, routing, state management, reusable components, and API integration.
+---
 
-The application supports different user roles and provides different functionalities based on user permissions.
+## ✨ Overview
 
-🛠️ Technology Stack
+This is a **React-based Library Management System frontend**.
 
-React
+The project focuses on building a **real-world frontend application** with:
 
-JavaScript
+> 🔐 **Authentication** · 🧭 **Routing** · 👥 **Role-Based Access** · 🧠 **State Management** · 🧩 **Reusable Components**
 
-Vite
+The application supports different user roles and provides different functionalities based on **user permissions**.
 
-React Router
+---
 
-Context API
+## 🛠️ Technology Stack
 
-HTML
+| Category | Technologies |
+|---|---|
+| ⚛️ **Frontend** | React, JavaScript |
+| ⚡ **Build Tool** | Vite |
+| 🧭 **Routing** | React Router |
+| 🧠 **State Management** | Context API |
+| 🎨 **Styling** | HTML, CSS, Bootstrap |
+| 🔄 **Integration** | REST API Integration |
+| 📦 **Version Control** | Git & GitHub |
 
-CSS
+---
 
-Bootstrap
+# 👥 User Roles
 
-REST API Integration
+The application supports the following user roles:
 
-Git & GitHub
+> 👑 **Admin**  
+> 📚 **Librarian**  
+> 👤 **Member**  
+> 🎓 **Faculty**
 
-👥 User Roles
+The available **pages, navigation, and actions** are displayed based on the authenticated user's **role and permissions**.
 
-The application supports the following roles:
+---
 
-Admin
+# 🗺️ Development Roadmap
 
-Librarian
+| Phase | Module |
+|---|---|
+| **01** | 🔐 Authentication |
+| **02** | 🧭 Routing |
+| **03** | 🔒 Protected Routes |
+| **04** | 👥 Role-Based Functionality |
+| **05** | 📊 Dashboard |
+| **06** | 📚 Book Management |
+| **07** | 🔍 Search & Filtering |
+| **08** | 📖 Book Copies |
+| **09** | 🔄 Borrowing Management |
+| **10** | 🔙 Return Management |
+| **11** | 💰 Wallet Management |
+| **12** | 👤 User Management |
+| **13** | 🙋 Profile & Borrowing History |
 
-Member
+---
 
-Faculty
+# 🔐 Phase 01 — Authentication
 
-The available pages, navigation, and actions are displayed based on the authenticated user's role and permissions.
+> **Goal:** Implement the authentication flow and manage user access.
 
-🔐 Phase 1 – Authentication
+### 🧠 Frontend Logic
 
-Implement the authentication flow for users.
+- Handle authentication state
+- Manage form state
+- Validate user input
+- Handle authentication success and failure
+- Store authenticated user information
+- Redirect users after successful authentication
+- Implement logout functionality
 
-Frontend Logic
+### ⚛️ React Concepts
 
-Handle authentication state
+`useState` · **Controlled Components** · **Form Handling** · **Validation** · **Conditional Rendering**
 
-Manage form state
+---
 
-Validate user input
+# 🧭 Phase 02 — Routing
 
-Handle authentication success and failure
+> **Goal:** Manage application navigation using **React Router**.
 
-Store authenticated user information
+### 📍 Application Routes
 
-Redirect users after successful authentication
-
-Implement logout functionality
-
-React Concepts
-
-useState
-
-Controlled Components
-
-Form Handling
-
-Validation
-
-Conditional Rendering
-
-🧭 Phase 2 – Routing
-
-Use React Router to manage application navigation.
-
-Application Routes
-
+```text
 /login
 
 /dashboard
@@ -102,27 +112,21 @@ Application Routes
 
 /profile
 /my-borrowings
+```
 
-React Concepts
+### ⚛️ React Concepts
 
-BrowserRouter
+`BrowserRouter` · `Routes` · `Route` · `Navigate` · **Nested Routes** · **Dynamic Routes**
 
-Routes
+---
 
-Route
+# 🔒 Phase 03 — Protected Routes
 
-Navigate
+> **Goal:** Restrict protected pages to authenticated users.
 
-Nested Routes
+### 🧠 Frontend Logic
 
-Dynamic Routes
-
-🔒 Phase 3 – Protected Routes
-
-Implement protected routes to restrict access to authenticated users.
-
-Frontend Logic
-
+```text
 User accesses a page
         ↓
 Check authentication status
@@ -130,39 +134,40 @@ Check authentication status
 Authenticated?
    ↓ Yes          ↓ No
 Allow Access     Redirect to Login
+```
 
-Protected routes should manage:
+### 🔑 Protected Route Responsibilities
 
-Authentication checks
+- **Authentication checks**
+- **Redirection**
+- **Unauthorized access handling**
+- **Role-based access**
 
-Redirection
+---
 
-Unauthorized access
+# 👥 Phase 04 — Role-Based Functionality
 
-Role-based access
+> **Goal:** Control what users can access based on their role and permissions.
 
-👥 Phase 4 – Role-Based Functionality
-
-Implement role-based rendering and access control in the frontend.
-
-Admin
+### 👑 Admin
 
 Manage library-related operations and users.
 
-Librarian
+### 📚 Librarian
 
 Manage books, book copies, borrowing, returns, and related operations.
 
-Member
+### 👤 Member
 
 Access available library features based on member permissions.
 
-Faculty
+### 🎓 Faculty
 
 Access available library features based on faculty permissions.
 
-Frontend Logic
+### 🧠 Frontend Logic
 
+```text
 Authenticated User
         ↓
 Get User Role
@@ -170,109 +175,92 @@ Get User Role
 Check Permissions
         ↓
 Render Allowed Pages and Actions
+```
 
-📊 Phase 5 – Dashboard
+---
 
-Create the main dashboard for the application.
+# 📊 Phase 05 — Dashboard
 
-Frontend Logic
+> **Goal:** Create the main application dashboard.
 
-Display relevant application information
+### 🧠 Frontend Logic
 
-Manage application state
+- Display relevant application information
+- Manage application state
+- Handle loading states
+- Handle error states
+- Handle empty data states
 
-Handle loading states
+### ⚛️ React Concepts
 
-Handle error states
+`useState` · `useEffect` · **Conditional Rendering** · **Component Reusability**
 
-Handle empty data states
+---
 
-React Concepts
+# 📚 Phase 06 — Book Management
 
-useState
+> **Goal:** Implement book-related functionality.
 
-useEffect
+### ✨ Features
 
-Conditional Rendering
+- Display book information
+- Search functionality
+- Filter functionality
+- Add book functionality
+- Update book functionality
+- Delete book functionality
+- View book details
 
-Component Reusability
+### 🧠 Frontend Logic
 
-📚 Phase 6 – Book Management
+- Manage book state
+- Handle user interactions
+- Update UI after operations
+- Handle loading and error states
+- Reuse components where appropriate
 
-Implement book-related functionality.
+---
 
-Features
+# 🔍 Phase 07 — Search & Filtering
 
-Display book information
+> **Goal:** Implement dynamic search and filtering functionality.
 
-Search functionality
+### 🧠 Frontend Logic
 
-Filter functionality
+- Manage search state
+- Filter displayed data
+- Update results dynamically
+- Handle empty results
 
-Add book functionality
+### 🚀 Optional Practice
 
-Update book functionality
+- **Debouncing**
+- **Custom Hooks**
+- **Optimizing unnecessary renders**
 
-Delete book functionality
+---
 
-View book details
+# 📖 Phase 08 — Book Copies
 
-Frontend Logic
+> **Goal:** Manage information related to physical book copies.
 
-Manage book state
+### 🧠 Frontend Logic
 
-Handle user interactions
+- Display copy information
+- Manage availability status
+- Add and update copies
+- Remove copies
+- Update the UI based on changes
 
-Update UI after operations
+---
 
-Handle loading and error states
+# 🔄 Phase 09 — Borrowing Management
 
-Reuse components where appropriate
+> **Goal:** Implement the complete borrowing workflow.
 
-🔍 Phase 7 – Search and Filtering
+### 🧠 Frontend Logic
 
-Implement search and filtering functionality.
-
-Frontend Logic
-
-Manage search state
-
-Filter displayed data
-
-Update results dynamically
-
-Handle empty results
-
-Optional Practice
-
-Debouncing
-
-Custom Hooks
-
-Optimizing unnecessary renders
-
-📖 Phase 8 – Book Copies
-
-Implement functionality for managing physical book copies.
-
-Frontend Logic
-
-Display copy information
-
-Manage availability status
-
-Add and update copies
-
-Remove copies
-
-Update the UI based on changes
-
-🔄 Phase 9 – Borrowing Management
-
-Implement the borrowing workflow.
-
-Frontend Logic
-
+```text
 Select User
       ↓
 Get Required Information
@@ -286,15 +274,19 @@ Process Borrowing
 Update Application State
       ↓
 Update UI
+```
 
-The frontend should provide appropriate validation and feedback based on the application's business rules.
+> The frontend should provide appropriate **validation and feedback** based on the application's business rules.
 
-🔙 Phase 10 – Return Management
+---
 
-Implement the book return workflow.
+# 🔙 Phase 10 — Return Management
 
-Frontend Logic
+> **Goal:** Implement the book return workflow.
 
+### 🧠 Frontend Logic
+
+```text
 Select Borrowing Record
         ↓
 Get Required Information
@@ -306,93 +298,85 @@ Update Application State
 Update Book Availability
         ↓
 Update UI
+```
 
-The application should handle the return status and display relevant information to the user.
+The application should handle the **return status** and display relevant information to the user.
 
-💰 Phase 11 – Wallet Management
+---
 
-Implement wallet-related functionality.
+# 💰 Phase 11 — Wallet Management
 
-Frontend Logic
+> **Goal:** Implement wallet-related functionality.
 
-Display wallet information
+### 🧠 Frontend Logic
 
-Manage wallet-related operations
+- Display wallet information
+- Manage wallet-related operations
+- Validate user actions
+- Update application state
+- Display operation status
+- Handle success and error states
 
-Validate user actions
+---
 
-Update application state
+# 👤 Phase 12 — User Management
 
-Display operation status
+> **Goal:** Implement user management functionality.
 
-Handle success and error states
+### 🧠 Frontend Logic
 
-👤 Phase 12 – User Management
+- Display user information
+- Search and filter users
+- View user details
+- Manage user information
+- Handle user-related operations
+- Update UI after changes
 
-Implement user management functionality.
+---
 
-Frontend Logic
+# 🙋 Phase 13 — Profile & Borrowing History
 
-Display user information
+> **Goal:** Allow authenticated users to access their own information.
 
-Search and filter users
+### ✨ Features
 
-View user details
+- Profile information
+- User-related information
+- Borrowing information
+- Borrowing history
 
-Manage user information
+### 🧠 Frontend Logic
 
-Handle user-related operations
+- Manage authenticated user data
+- Display relevant information
+- Handle loading and error states
 
-Update UI after changes
+---
 
-🙋 Phase 13 – Profile and Borrowing History
+# 🧠 State Management
 
-Implement functionality for authenticated users to access their own information.
+## 🔹 Local State
 
-Features
+Use **local component state** for functionality specific to individual components.
 
-Profile information
+**Examples:**
 
-User-related information
+- Form state
+- Search state
+- UI state
+- Loading state
+- Error state
+- Selected data
 
-Borrowing information
+---
 
-Borrowing history
+## 🔸 Global State
 
-Frontend Logic
+Use **Context API** for application-wide state.
 
-Manage authenticated user data
+### 📦 Suggested Global State
 
-Display relevant information
-
-Handle loading and error states
-
-🧠 State Management
-
-Local State
-
-Use local component state for functionality specific to individual components.
-
-Examples include:
-
-Form state
-
-Search state
-
-UI state
-
-Loading state
-
-Error state
-
-Selected data
-
-Global State
-
-Use Context API for application-wide state.
-
-Suggested Global State
-
+```text
 AuthContext
      │
      ├── Authentication State
@@ -400,27 +384,29 @@ AuthContext
      ├── User Role
      ├── Login
      └── Logout
+```
 
-🧩 Reusable Components
+---
 
-Create reusable components to avoid repeated code and improve maintainability.
+# 🧩 Reusable Components
 
-Examples may include:
+> Create reusable components to avoid repeated code and improve **maintainability**.
 
-Common UI components
+### Component Categories
 
-Layout components
+- Common UI components
+- Layout components
+- Form-related components
+- Feedback components
+- Shared functionality
 
-Form-related components
+> The exact UI design and components can be implemented based on the project requirements.
 
-Feedback components
+---
 
-Shared functionality
+# 🗂️ Suggested Folder Structure
 
-The exact UI design and components can be implemented based on the project requirements.
-
-🗂️ Suggested Folder Structure
-
+```text
 src/
 │
 ├── assets/
@@ -451,105 +437,81 @@ src/
 │
 ├── App.jsx
 └── main.jsx
+```
 
-⚛️ React Concepts Practiced
+---
 
-This project provides practice with:
+# ⚛️ React Concepts Practiced
 
-Components
+This project provides practical experience with:
 
-JSX
+### 🧱 Core React
 
-Props
+- Components
+- JSX
+- Props
+- State
+- `useState`
+- `useEffect`
+- `useContext`
+- `useRef`
 
-State
+### 🧭 Application Development
 
-useState
+- React Router
+- Protected Routes
+- Dynamic Routes
+- Role-Based Rendering
+- Context API
+- State Management
 
-useEffect
+### 📝 Forms & UI
 
-useContext
+- Controlled Components
+- Form Handling
+- Validation
+- Conditional Rendering
+- Lists and Keys
+- Loading States
+- Error Handling
 
-Context API
+### 🚀 Advanced Practice
 
-useRef
+- Custom Hooks
+- Reusable Components
+- API Integration
 
-Controlled Components
+---
 
-Conditional Rendering
+# 🚀 Future Improvements
 
-Lists and Keys
+After completing the core application:
 
-React Router
+> **TypeScript** · **Redux Toolkit** · **Advanced State Management** · **Custom Hooks**
 
-Protected Routes
+> **Lazy Loading** · **Code Splitting** · **Performance Optimization**
 
-Dynamic Routes
+> **Unit Testing** · **CI/CD**
 
-Role-Based Rendering
+---
 
-Custom Hooks
+# 🎯 Project Goal
 
-Form Handling
+The goal of this project is to build a **practical frontend application** and demonstrate:
 
-Validation
+> ⚛️ **Strong React Concepts**  
+> 🧠 **State Management**  
+> 🧭 **React Router & Protected Routes**  
+> 👥 **Role-Based Functionality**  
+> 📝 **Form Handling & Validation**  
+> 🧩 **Reusable Components**  
+> 💼 **Real-World Frontend Workflows**  
+> 🗂️ **Clean Project Architecture**  
+> 🔄 **API Integration**  
+> 📱 **Responsive Design**
 
-State Management
+---
 
-Loading States
+### ⭐ Learning Approach
 
-Error Handling
-
-API Integration
-
-🚀 Future Improvements
-
-After completing the core application, additional improvements may include:
-
-TypeScript
-
-Redux Toolkit
-
-Advanced State Management
-
-Custom Hooks
-
-Lazy Loading
-
-Code Splitting
-
-Performance Optimization
-
-Unit Testing
-
-CI/CD
-
-🎯 Project Goal
-
-The goal of this project is to build a practical frontend application and demonstrate:
-
-Strong JavaScript fundamentals
-
-React concepts
-
-State management
-
-React Router
-
-Protected routes
-
-Role-based functionality
-
-Form handling
-
-Validation
-
-Reusable components
-
-Real-world frontend workflows
-
-Clean project architecture
-
-API integration
-
-Responsive design
+> **Build the application module by module, understand the React logic behind each feature, and gradually improve the project with more advanced concepts.**
